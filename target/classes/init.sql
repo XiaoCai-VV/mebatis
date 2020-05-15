@@ -6,3 +6,6 @@ CREATE TABLE blog(
 );
 
 INSERT INTO blog(NAME, author_id) VALUES('测试文章标题', 2);
+
+
+
