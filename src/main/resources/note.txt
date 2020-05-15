@@ -1,0 +1,24 @@
+com.mebatis.v1.mapper.Blog 
+	表对应的实体对象
+	
+com.mebatis.v1.mapper.BlogMapper
+	需要被代理的Mapper对象
+	
+com.mebatis.v1.GPConfiguration
+	配置类  解析配置文件并缓存  同时负责生成代理对象
+	
+com.mebatis.v1.GPMapperProxy
+	Mapper代理对象的触发管理类  其invoke方法负责根据statementId
+	(类全路径.方法名[com.mebatis.v1.mapper.BlogMapper.selectBlogById])
+	在配置类中找到其对于的sql语句
+
+com.mebatis.v1.GPExecutor
+	执行器  负责执行具体的sql
+
+com.mebatis.v1.GPSqlSession
+	对外的api类  缓存配置类和执行器类 其getMapper方法负责调用配置类的getMapper生成代理对象
+	其selectOne方法负责调用执行器来执行具体的sql
+	
+
+	
+	
